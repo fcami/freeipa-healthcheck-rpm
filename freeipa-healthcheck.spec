@@ -9,20 +9,14 @@
 %{!?python3_sitelib: %global python3_sitelib %(%{__python3} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 
-# git ls-remote https://github.com/freeipa/freeipa-healthcheck.git
-%global commit f0c33bd26e3aaaadd60bc130ab89f5fb09a9464a
-%global gittag 0.1
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-
-
 Name:           %{project}-%{shortname}
-Version:        %{gittag}
+Version:        0.1
 Release:        1%{?dist}
 Summary:        Health check tool for FreeIPA
 BuildArch:      noarch
 License:        GPLv3
-URL:            https://github.com/%{project}/%{project}-%{shortname}
-Source0:        https://github.com/%{project}/%{project}-%{shortname}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
+URL:            https://github.com/%{project}/%{name}
+Source0:        https://github.com/%{project}/%{name}/archive/release-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1:        %{longname}.conf
 Patch0:         0001-add-ipahealthcheck.ipa-package.patch
 
@@ -39,7 +33,7 @@ defects in a FreeIPA cluster.
 
 
 %prep
-%autosetup -p1 -n %{project}-healthcheck-%{commit}
+%autosetup -p1 -n %{project}-%{shortname}-release-%{version}
 
 
 %build
