@@ -1,0 +1,14 @@
+diff --git a/setup.py b/setup.py
+index d8c80f6..d350e04 100644
+--- a/setup.py
++++ b/setup.py
+@@ -9,7 +9,8 @@ setup(
+     packages=[
+         'ipahealthcheck.core',
+         'ipahealthcheck.dogtag',
+-        'ipahealthcheck.ipa'
++        'ipahealthcheck.ipa',
++        'ipahealthcheck.meta'
+     ],
+     entry_points={
+         # creates bin/ipahealthcheck
