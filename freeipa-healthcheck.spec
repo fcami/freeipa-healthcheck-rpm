@@ -19,6 +19,7 @@ URL:            https://github.com/%{project}/%{name}
 Source0:        https://github.com/%{project}/%{name}/archive/release-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1:        %{longname}.conf
 Patch0:         0001-add-ipahealthcheck.ipa-package.patch
+Patch1:         0002-installutils_realm_to_serverid.patch
 
 
 BuildRequires:  python3-devel

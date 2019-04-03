@@ -1,0 +1,22 @@
+diff --git a/src/ipahealthcheck/ipa/plugin.py b/src/ipahealthcheck/ipa/plugin.py
+index 5c540b2..3a735f6 100644
+--- a/src/ipahealthcheck/ipa/plugin.py
++++ b/src/ipahealthcheck/ipa/plugin.py
+@@ -3,7 +3,7 @@
+ #
+ 
+ from ipalib import api, errors
+-from ipapython.ipaldap import realm_to_serverid
++#from ipapython.ipaldap import realm_to_serverid
+ from ipaserver.install import cainstance
+ from ipaserver.install import dsinstance
+ from ipaserver.install import httpinstance
+@@ -20,7 +20,7 @@ class IPAPlugin(Plugin):
+                                         host_name=api.env.host)
+         self.http = httpinstance.HTTPInstance()
+         self.ds = dsinstance.DsInstance()
+-        self.serverid = realm_to_serverid(api.env.realm)
++        self.serverid = installutils.realm_to_serverid(api.env.realm)
+         self.conn = api.Backend.ldap2
+ 
+ 
